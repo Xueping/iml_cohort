@@ -19,5 +19,11 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^cohort/', include('cohort.urls')),
+#     url(r'^policy/', include('policy.urls')),
+#     url(r'^clustering/', include('clustering.urls')),
+#     url(r'^data_import/', include('data_import.urls')),
+#     url(r'^feature_representation/', include('feature_representation.urls')),
+#     url(r'^metric/', include('metric.urls')),
+#     url(r'^visualization/', include('visualization.urls')),
     
 ]
