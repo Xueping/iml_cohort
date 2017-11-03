@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'cohort',
     'policy',
     'arc_doh',
+    'clustering',
+    'data_import',
+    'feature_representation',
+    'metric',
+    'visualization',
 ]
 
 MIDDLEWARE = [
