@@ -65,7 +65,7 @@ def encoder(df, encoding_dim=2):
     autoencoder.fit(X_train, X_train, epochs=50, batch_size=100, shuffle=True, validation_data=(X_test, X_test))
     # The single encoder model
     encoder = Model(inputs=input_dim, outputs=encoded)
-    encoded_input = Input(shape=(encoding_dim,))
+#     encoded_input = Input(shape=(encoding_dim,))
     encoded_out = encoder.predict(X)
     return encoded_out
 
@@ -79,9 +79,9 @@ def features_representation(request):
     if request.method == 'POST':
         num_topics = int(request.POST.get("num_topics", ""))  # get the number of topics
         num_dim = int(request.POST.get("num_dim", ""))  # get the dimension of encoded features
-        settings.PROJECT_ROOT
+#         settings.PROJECT_ROOT
         
-        df_data = pd.read_csv(os.path.join(settings.PROJECT_ROOT, 'data/DIAGNOSES_ICD.csv')).sample(20)
+        df_data = pd.read_csv(os.path.join(settings.BASE_DIR, 'data/DIAGNOSES_ICD.csv')).sample(20)
 #         df_data = pd.read_csv('./data/DIAGNOSES_ICD.csv').sample(20)  # load the csv file of original features
         df_origi = df_data[df_data.columns[:-1]]  # original features
 
@@ -91,8 +91,8 @@ def features_representation(request):
         col_encoded = ['dim_{}'.format(i) for i in range(len(ae_encoded[0]))]
         df_probs = pd.DataFrame(topic_probs, columns=col_probs)
         df_encoded = pd.DataFrame(ae_encoded, columns=col_encoded)
-        df_probs.to_csv(os.path.join(settings.PROJECT_ROOT, 'data/features_topics.csv'), index=False)
-        df_encoded.to_csv(os.path.join(settings.PROJECT_ROOT, 'data/features_autoencoder.csv'), index=False)
+        df_probs.to_csv(os.path.join(settings.BASE_DIR, 'data/features_topics.csv'), index=False)
+        df_encoded.to_csv(os.path.join(settings.BASE_DIR, 'data/features_autoencoder.csv'), index=False)
         # context is a dict of html code, containing three types of features representation
         context = {
             'origi': df_origi.to_html(),
