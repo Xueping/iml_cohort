@@ -14,6 +14,7 @@ from sklearn.model_selection import train_test_split
 from django.conf  import settings
 import pandas as pd
 import tensorflow as tf
+# from pandas.tests.io.parser import index_col
 
 
 # Create your views here.
@@ -81,7 +82,7 @@ def features_representation(request):
         num_dim = int(request.POST.get("num_dim", ""))  # get the dimension of encoded features
 #         settings.PROJECT_ROOT
         
-        df_data = pd.read_csv(os.path.join(settings.BASE_DIR, 'data/DIAGNOSES_ICD.csv')).sample(20)
+        df_data = pd.read_csv(os.path.join(settings.BASE_DIR, 'data/outcome_data.csv'), header= 0, index_col=0 )
 #         df_data = pd.read_csv('./data/DIAGNOSES_ICD.csv').sample(20)  # load the csv file of original features
         df_origi = df_data[df_data.columns[:-1]]  # original features
 

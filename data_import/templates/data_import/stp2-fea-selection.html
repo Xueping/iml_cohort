@@ -1,47 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Step2 </title>
-<link rel="stylesheet" href="css/step2-component.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Welcome to Cohort System</title>
+{%load static%}
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{% static 'data_import/doc.css'%}">
 </head>
 <body>
-<div class="subject-info-box-1">
-  <select multiple="multiple" id='lstBox1' class="form-control">
-    <option value="ajax">Ajax</option>
-    <option value="jquery">jQuery</option>
-    <option value="javascript">JavaScript</option>
-    <option value="mootool">MooTools</option>
-    <option value="prototype">Prototype</option>
-    <option value="dojo">Dojo</option>
-  </select>
-</div>
+<header class="bs-docs-nav navbar navbar-static-top" id="top"> 
+<div class="container">
+ <div class="navbar-header">
+  <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#bs-navbar" data-toggle="collapse" type="button">
+   <span class="sr-only">Toggle navigation</span>
+   <span class="icon-bar"></span>
+   <span class="icon-bar"></span>
+   <span class="icon-bar"></span> </button>
+   <a href="../" class="navbar-brand">Patient Cohort</a>
+  </div> 
+  <nav class="collapse navbar-collapse" id="bs-navbar">
+   <ul class="nav navbar-nav">
+    <li class="active"> <a href="../getting-started/">Dashboard</a> </li>
+    <li> <a href="../css/">Settings</a> </li>
+   </ul>
+   </nav>
+   </div>
+</header>
 
-<div class="subject-info-arrows text-center">
-  <input type='button' id='btnAllRight' value='>>' class="btn btn-default" /><br />
-  <input type='button' id='btnRight' value='>' class="btn btn-default" /><br />
-  <input type='button' id='btnLeft' value='<' class="btn btn-default" /><br />
-  <input type='button' id='btnAllLeft' value='<<' class="btn btn-default" />
-</div>
+ <div class="bs-docs-header" id="content" tabindex="-1"> 
+	<div class="container"> 
+		<h1>Step 2 Feature Select</h1> 
+		<p>An overview of Bootstrap, how to download and use, basic templates and examples, and more.</p> 
+		<div id="carbonads-container" class="container">
+			<div class="carbonad center">
+				<ul class="nav nav-pills navbar-nav">
+					<li><a href="stp1-import.html">Step 1</a></li>
+					<li><a href="stp2-fea-selection.html">Step 2</a></li>
+					<li><a href="stp3-fea-processing.html">Step 3</a></li>
+					<li><a href="stp4-fea-representation.html">Step 4</a></li>
+					<li><a href="stp5-rep-view.html">Step 5</a></li>
+					<li><a href="stp6-clu-selection.html">Step 6</a></li>
+					<li><a href="stp7-clu-visualisation.html">Step 7</a></li>
+					<li><a href="stp8-dat-exploration.html">Step 8</a></li>
+					<li><a href="stp9-dat-labelling.html">Step 9</a></li>
+					<li><a href="stp10-met-learning.html">Step 10</a></li>						
+				</ul>
+			</div>
+		</div>
+	 </div>
+ </div>
 
-<div class="subject-info-box-2">
-  <select multiple="multiple" id='lstBox2' class="form-control">
-    <option value="asp">ASP.NET</option>
-    <option value="c#">C#</option>
-    <option value="vb">VB.NET</option>
-    <option value="java">Java</option>
-    <option value="php">PHP</option>
-    <option value="python">Python</option>
-  </select>
-</div>
+<main role="main">
+<!-- here for upload file content -->
+	<div class="page-content container">
+		<form action="{% url "renew" %}" method="post" enctype="multipart/form-data" 
+		class="form-horizontal  center-block" style="width: 30%;text-align:center">
+		{% csrf_token %}
+			<div class="form-group">
+						   <h2>Select required features <br/>
+						   </h2>				
+				<span id="helpBlock-example" class="help-block">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</span>
+				<select name="new_features" multiple class="form-control" style="min-height: 200px;">
+ 
+			      {% for f in features %}
+				      <option value="{{f}}">{{f}}</option>
+				  {% endfor %}
+			 
+			</select>
+			
+			<input type="submit" class="btn btn-primary" value="Select" style="margin-top: 15px;">
+			</div>
+		</form>
+	</div>
+</main>
 
-
-
+  <footer class="footer">
+  	<div class="container">
+  		 <p class="text-muted">&copy; All right to UTS:CAI 2017</p>
+  	</div>
+  </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<script src="js/lists.js"></script>
 </body>
 </html>
