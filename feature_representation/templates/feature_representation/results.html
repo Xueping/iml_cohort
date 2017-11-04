@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+
+{% block Orignial %}
+<h1>{{name}}</h1>
+{{origi | safe}}
+{% endblock %}
+
+
+{% block topics %}
+<h1>{{name}}</h1>
+{{probs | safe}}
+{% endblock %}
+
+
+
+{% block Encoder %}
+<h1>{{name}}</h1>
+{{encoder | safe}}
+{% endblock %}
+
+<br>
+
+
+</body>
+</html>
