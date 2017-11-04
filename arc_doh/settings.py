@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'feature_representation',
     'metric',
     'visualization',
+    
 ]
 
 MIDDLEWARE = [

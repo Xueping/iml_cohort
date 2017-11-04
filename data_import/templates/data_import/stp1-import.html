@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Welcome to Cohort System</title>
+{%load static%}
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{% static 'data_import/doc.css'%}">
+</head>
+<body>
+<header class="bs-docs-nav navbar navbar-static-top" id="top"> 
+<div class="container">
+ <div class="navbar-header">
+  <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#bs-navbar" data-toggle="collapse" type="button">
+   <span class="sr-only">Toggle navigation</span>
+   <span class="icon-bar"></span>
+   <span class="icon-bar"></span>
+   <span class="icon-bar"></span> </button>
+   <a href="../" class="navbar-brand">Patient Cohort</a>
+  </div> 
+  <nav class="collapse navbar-collapse" id="bs-navbar">
+   <ul class="nav navbar-nav">
+    <li class="active"> <a href="../getting-started/">Dashboard</a> </li>
+    <li> <a href="../css/">Settings</a> </li>
+   </ul>
+   </nav>
+   </div>
+</header>
+
+ <div class="bs-docs-header" id="content" tabindex="-1"> 
+	<div class="container"> 
+		<h1>Step 1 Data Import</h1> 
+		<p>An overview of Bootstrap, how to download and use, basic templates and examples, and more.</p> 
+		<div id="carbonads-container" class="container">
+			<div class="carbonad center">
+				<ul class="nav nav-pills navbar-nav">
+					<li><a href="stp1-import.html">Step 1</a></li>
+					<li><a href="stp1-import.html">Step 2</a></li>
+					<li><a href="stp3-fea-processing.html">Step 3</a></li>
+					<li><a href="stp4-fea-representation.html">Step 4</a></li>
+					<li><a href="stp5-rep-view.html">Step 5</a></li>
+					<li><a href="stp6-clu-selection.html">Step 6</a></li>
+					<li><a href="stp7-clu-visualisation.html">Step 7</a></li>
+					<li><a href="stp8-dat-exploration.html">Step 8</a></li>
+					<li><a href="stp9-dat-labelling.html">Step 9</a></li>
+					<li><a href="stp10-met-learning.html">Step 10</a></li>						
+				</ul>
+			</div>
+		</div>
+	 </div>
+ </div>
+
+<main role="main">
+<!-- here for upload file content -->
+	<div class="page-content">
+		<div class="row" style="padding:5px; width:98%;">
+						<div id="home" class="tab-pane fade in active clear" style="text-align:center; padding:80px;">
+						   <h2>Select file to upload <br/>
+						   	<small>Maximum upload size is 3mb.<br>
+						   	</small>
+						   </h2>
+						   <br/>
+						   <form class="form-inline" style="padding:10px;" role="form" action='.' method="post" enctype="multipart/form-data">
+            					{% csrf_token %}
+						   		<input style="padding:0px;" class="form-control" type="file" name="docfile" required id="id_docfile"><br/><br/>
+						   		<input type="submit" class="btn btn-primary" value="Upload">
+						   </form>
+						</div>		
+		</div>
+	</div>
+</main>
+
+  <footer class="footer">
+  	<div class="container">
+  		 <p class="text-muted">&copy; All right to UTS:CAI 2017</p>
+  	</div>
+  </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

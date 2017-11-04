@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="{% url "renew" %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+<select name="new_features" multiple>
+  {% for f in features %}
+      <option value="{{f}}">{{f}}</option>
+  {% endfor %}
+</select>
+<input type="submit">
+</form>
+
+<p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+
+</body>
+</html>
