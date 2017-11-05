@@ -14,6 +14,7 @@ from sklearn.model_selection import train_test_split
 from django.conf  import settings
 import pandas as pd
 import tensorflow as tf
+from scipy import sparse, io
 # from pandas.tests.io.parser import index_col
 
 
@@ -25,13 +26,13 @@ def topic(df, num_topics=5):
     :param num_topics: the number of topics, default=5
     :return: the probability vectors of each topics the entry belongs to
     """
-    X, y = df[df.columns[:-1]], df[df.columns[-1]]
+#     X, y = df[df.columns[:-1]], df[df.columns[-1]]
     lda = LatentDirichletAllocation(n_components=num_topics,
                                     max_iter=5,
                                     learning_method='online',
                                     learning_offset=50.,
                                     random_state=0)
-    return lda.fit_transform(X)
+    return lda.fit_transform(df)
 
 
 def encoder(df, encoding_dim=2):
@@ -43,14 +44,16 @@ def encoder(df, encoding_dim=2):
     """
     sess = tf.Session()
     K.set_session(sess)
+    
+    df = df.todense()
 
-    X, y = df[df.columns[:-1]], df[df.columns[-1]]
-    ncol = len(X.columns)  # the number of columns
+    X, y = df[:,:-1], df[:,-1]
+    ncol = X.shape[1]  # the number of columns
     X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=0.3, random_state=seed(2017))
 
-    X_train = X_train.as_matrix()
-    X_test = X_test.as_matrix()
-    X = X.as_matrix()
+#     X_train = X_train.as_matrix()
+#     X_test = X_test.as_matrix()
+#     X = X.as_matrix()
 
     # Auto encoder structure
     # InputLayer (None, 10)
@@ -78,31 +81,40 @@ def features_representation(request):
     :return: render the representation of features in feature_representation/results.html
     """
     if request.method == 'POST':
-        num_topics = int(request.POST.get("num_topics", ""))  # get the number of topics
-        num_dim = int(request.POST.get("num_dim", ""))  # get the dimension of encoded features
-#         settings.PROJECT_ROOT
-        
-        df_data = pd.read_csv(os.path.join(settings.BASE_DIR, 'data/outcome_data.csv'), header= 0, index_col=0 )
+        representation = str(request.POST.get("representation", ""))
+                
+#         df_data = pd.read_csv(os.path.join(settings.BASE_DIR, 'data/outcome_data.csv'), index_col=0 )
+        df_data = io.mmread(os.path.join(settings.BASE_DIR, 'data/outcome_data.mtx'))
 #         df_data = pd.read_csv('./data/DIAGNOSES_ICD.csv').sample(20)  # load the csv file of original features
-        df_origi = df_data[df_data.columns[:-1]]  # original features
-
-        topic_probs = topic(df_data, num_topics)
-        ae_encoded = encoder(df_data, num_dim)
-        col_probs = ['topic_{}'.format(i) for i in range(len(topic_probs[0]))]
-        col_encoded = ['dim_{}'.format(i) for i in range(len(ae_encoded[0]))]
-        df_probs = pd.DataFrame(topic_probs, columns=col_probs)
-        df_encoded = pd.DataFrame(ae_encoded, columns=col_encoded)
-        df_probs.to_csv(os.path.join(settings.BASE_DIR, 'data/features_topics.csv'), index=False)
-        df_encoded.to_csv(os.path.join(settings.BASE_DIR, 'data/features_autoencoder.csv'), index=False)
+#         df_origi = df_data[df_data.columns[1:]]  # original features
+        
+        
+        if representation == "topicmodel":            
+            num_topics = int(request.POST.get("num_topics", ""))  # get the number of topics
+            mdl = topic(df_data, num_topics)
+            cols = ['topic_{}'.format(i) for i in range(len(mdl[0]))]
+            df_reperent = pd.DataFrame(mdl, columns=cols)
+#             df_reperent.to_csv(os.path.join(settings.BASE_DIR, 'data/features_topics.csv'), index=False)
+        elif representation == "autoencoder": 
+            num_dim = int(request.POST.get("num_dim", ""))  # get the dimension of encoded features            
+            mdl = encoder(df_data, num_dim)            
+            cols = ['dim_{}'.format(i) for i in range(len(mdl[0]))]
+            df_reperent = pd.DataFrame(mdl, columns=cols)
+            
+        else:
+            df_reperent = df_data
+#             df_reperent.to_csv(os.path.join(settings.BASE_DIR, 'data/features_autoencoder.csv'), index=False)
+            
+        df_reperent.to_csv(os.path.join(settings.BASE_DIR, 'data/features_rep.csv'), index=False)       
         # context is a dict of html code, containing three types of features representation
         context = {
-            'origi': df_origi.to_html(),
-            'probs': df_probs.to_html(),
-            'encoder': df_encoded.to_html()
+#             'origi': df_data.sample(20).to_html(),
+            'reprnt': df_reperent.sample(20).to_html(classes=['table', 'table-striped', 'table-bordered'], index=False),
+#             'rep':representation
         }
-        return render(request,'feature_representation/results.html', context)
+        return render(request,'feature_representation/stp5-rep-view.html', context)
     else:
-        return render(request, 'feature_representation/features.html')
+        return render(request, 'feature_representation/stp4-fea-representation.html')
 
 
 if __name__ == "__main__":

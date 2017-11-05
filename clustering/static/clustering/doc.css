@@ -1,0 +1,90 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 30px;
+}
+
+.page-content {
+	padding-top: 25px;
+}
+
+.bs-docs-nav {
+  margin-bottom: 0;
+  background-color: #fff;
+  border-bottom: 0;
+}
+
+.bs-docs-header {
+  position: relative;
+  padding: 30px 0;
+  color: #cdbfe3;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#563d7c), to(#6f5499));
+  background-image: -webkit-linear-gradient(top, #563d7c 0%, #6f5499 100%);
+  background-image:      -o-linear-gradient(top, #563d7c 0%, #6f5499 100%);
+  background-image:         linear-gradient(to bottom, #563d7c 0%, #6f5499 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
+  background-repeat: repeat-x;
+}
+
+.top-border {
+    border-top: 1px dashed grey;
+    margin-top: 10px;
+}
+
+.footer-row {
+    height: 30px;
+}
+
+.center {
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color: #f5f5f5;
+}
+
+/* Visualization styles
+-------------------------------------------------- */
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  fill: none;
+  fill-opacioty: 0.0;
+}
+
+.bla {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: #6f7890;
+  vertical-align: middle;
+  /*background-color: #252830;*/ }
+  .bla .lp {
+    float: left; }
+    
+.lq .ln {
+  border-radius: 0.25rem; 
+  color: #cdbfe3;}
+  .lq .ln.active,
+  .show > .lq .ln {
+    color: #fff;
+    background-color: #1997c6; }    

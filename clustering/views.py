@@ -11,6 +11,7 @@ from sklearn.cluster import Birch
 from sklearn.decomposition import PCA
 import csv
 import json
+import pandas as pd
 
 from django.conf  import settings
 import os
@@ -28,21 +29,21 @@ num_clustering is a param for the number of classes for a clustering
 num_pca is a param for the number of classes for a pca. the default is 2
 '''
 
-al_selection = 3
-num_clustering = 4
+# al_selection = 3
+# num_clustering = 4
 num_pca = 2
 
 def select_algorithm(selection,num_clus ,X):
-    if selection == 0:
+    if selection == "KMeans":
         print "using kmeans"
         return KMeans(n_clusters=num_clus).fit_predict(X)
-    if selection == 1:
+    if selection == "MiniBatchKMeans":
         print "using minibatch"
         return MiniBatchKMeans(n_clusters=num_clus).fit_predict(X)
-    if selection == 2:
+    if selection == "Birch":
         print "using birch"
         return Birch(n_clusters=num_clus).fit_predict(X)
-    if selection == 3:
+    if selection == "AgglomerativeClustering":
         print "using agglo"
         return AgglomerativeClustering(n_clusters=num_clus).fit_predict(X)
     else:
@@ -55,44 +56,50 @@ def clusteringMethod(request):
     :return: render the representation of features in feature_representation/results.html
     """
     if request.method == 'POST':
-        num_topics = int(request.POST.get("num_topics", ""))  # get the number of topics
-        num_dim = int(request.POST.get("num_dim", ""))  # get the dimension of encoded features
-        clusteringAndPCA()
+        al_selection = request.POST.get("clusteringModel", "")  # get the number of topics
+        num_clustering = int(request.POST.get("clu_num", ""))  # get the dimension of encoded features
+        clusteringAndPCA(al_selection,num_clustering)
         # context is a dict of html code, containing three types of features representation
         
         return render(request,'clustering/results.html')
     else:
-        return render(request, 'clustering/features.html')
+        return render(request, 'clustering/stp6-clu-selection.html')
 
 # do clustering algorithm
-def clusteringAndPCA():
-    X = []
-    with codecs.open(os.path.join(settings.BASE_DIR, 'data/demo_test_data.csv'), 'r', encoding='utf-8') as csvfile:
-        spamreader = csv.reader(csvfile, delimiter=str(','))
-        for line in spamreader:
-            X.append([float(ele) for ele in line][:])
-        # do clustering
-        X = np.array(X,dtype='float32')
-        y_pred = select_algorithm(al_selection,num_clustering,X)
+def clusteringAndPCA(al_selection,num_clustering):
+#     X = []
+#     with codecs.open(os.path.join(settings.BASE_DIR, 'data/features_rep.csv'), 'r', encoding='utf-8') as csvfile:
+#         spamreader = csv.reader(csvfile, delimiter=str(','))
+#         for line in spamreader:
+#             X.append([float(ele) for ele in line][:])
+#         # do clustering
+#         X = np.array(X,dtype='float32')
+    X = pd.read_csv(os.path.join(settings.BASE_DIR, 'data/features_rep.csv'))
+    y_pred = select_algorithm(al_selection,num_clustering,X)
     
-    #export csv file for the clustering result
-    with codecs.open(os.path.join(settings.BASE_DIR, 'data/demo_test_data.csv'), 'r', encoding='utf-8') as csvfile:
-        spamreader = csv.reader(csvfile, delimiter=str(','))
-        with codecs.open(os.path.join(settings.BASE_DIR, 'data/test_data.csv'), 'w', encoding='utf-8') as csvoutputfile:
-            index = 0
-            for line in spamreader:
-                writer = csv.writer(csvoutputfile)
-                writer.writerow(line + [y_pred[index]])
-                index +=1
+    X['cluster'] = y_pred    
+    X.to_csv(os.path.join(settings.BASE_DIR, 'data/clustering_results.csv'), index=False) 
+  
+#     #export csv file for the clustering result
+#     with codecs.open(os.path.join(settings.BASE_DIR, 'data/demo_test_data.csv'), 'r', encoding='utf-8') as csvfile:
+#         spamreader = csv.reader(csvfile, delimiter=str(','))
+#         with codecs.open(os.path.join(settings.BASE_DIR, 'data/test_data.csv'), 'w', encoding='utf-8') as csvoutputfile:
+#             index = 0
+#             for line in spamreader:
+#                 writer = csv.writer(csvoutputfile)
+#                 writer.writerow(line + [y_pred[index]])
+#                 index +=1
+#     
     
-    
+    del X['cluster']
     # export json file and transform num_classes to 2 dim by pca
     pca = PCA(n_components=num_pca)
     pca.fit(X)
     X_trans = pca.transform(X)
     
     
-    num_attr = len(X[0])
+    num_attr = X.shape[1]
+    
     dict_out = {}
     list_tmp = []
     for sample_num in range(len(X)):
@@ -100,9 +107,10 @@ def clusteringAndPCA():
         for attr_num in range(num_pca+num_attr):
     
             if attr_num < num_pca:
-                dict_in[str(attr_num)] = str(X_trans[sample_num][attr_num])
+                dict_in['feature_'+str(attr_num)] = str(X_trans[sample_num][attr_num])
             else:
-                dict_in[str(attr_num)] = str(X[sample_num][attr_num-num_attr])
+                dict_in['feature_'+str(attr_num)] = str(X.iloc[sample_num,attr_num-num_pca])
+#                 print X.iloc[sample_num,attr_num-num_pca]
         dict_in['label'] = str(y_pred[sample_num])
         list_tmp.append(dict_in)
     
