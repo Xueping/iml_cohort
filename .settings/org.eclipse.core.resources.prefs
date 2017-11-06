@@ -10,3 +10,5 @@ encoding//feature_representation/forms.py=utf-8
 encoding//feature_representation/models.py=utf-8
 encoding//feature_representation/urls.py=utf-8
 encoding//feature_representation/views.py=utf-8
+encoding//visualization/urls.py=utf-8
+encoding//visualization/views.py=utf-8

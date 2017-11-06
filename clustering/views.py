@@ -7,7 +7,6 @@ from sklearn.cluster import MiniBatchKMeans
 from sklearn.cluster import AgglomerativeClustering
 from sklearn.cluster import Birch
 from sklearn.decomposition import PCA
-import json
 import pandas as pd
 
 from django.conf  import settings
@@ -58,10 +57,14 @@ def clusteringMethod(request):
         print num_clustering
         clusteringAndPCA(al_selection,num_clustering)
         # context is a dict of html code, containing three types of features representation
-        
-        return render(request,'clustering/stp7-clu-visualisation.html')
+        content = {'Title': "Step 7: Clustering Visualization",
+                   "listId":"li7",
+                   'vData':os.path.join(settings.BASE_DIR, 'static/data/outcome_visual.csv')} 
+        return render(request,'clustering/stp7-clu-visualisation.html',content)
     else:
-        return render(request, 'clustering/stp6-clu-selection.html')
+        content = {'Title': "Step 6: Clustering Model Selection",
+                   "listId":"li6"} 
+        return render(request, 'clustering/stp6-clu-selection.html',content)
 
 # do clustering algorithm
 def clusteringAndPCA(al_selection,num_clustering):
@@ -92,7 +95,7 @@ def clusteringAndPCA(al_selection,num_clustering):
     
     visualData = visualData.rename(columns = {'Unnamed: 0':'id'})
     
-    visualData.to_csv(os.path.join(settings.BASE_DIR, 'data/outcome_visual.csv'), index=False) 
+    visualData.to_csv(os.path.join(settings.BASE_DIR, 'static/data/outcome_visual.csv'), index=False) 
     
     
     

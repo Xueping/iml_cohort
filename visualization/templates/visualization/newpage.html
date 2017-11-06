@@ -1,0 +1,85 @@
+{% include "header.html"%}
+<style type="text/css">
+    form{
+        margin: 20px 0;
+    }
+    form input, button{
+        padding: 5px;
+    }
+    table{
+        width: 100%;
+        margin-bottom: 20px;
+		border-collapse: collapse;
+    }
+    table, th, td{
+        border: 1px solid #cdcdcd;
+    }
+    table th, table td{
+        padding: 10px;
+        text-align: left;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+	
+var node_list = localStorage.getItem("node_list");	
+var node_info = node_list.split(",");
+var checked_node = [];
+var arrayLength = node_info.length;
+console.log(node_list);
+for (var i = 0; i < arrayLength; i++) {
+    console.log(node_info[i]);
+    //Do something
+}
+
+
+ $(document).ready(function(){
+        for (var i = 0; i < arrayLength; i++) {
+			
+            var name = node_info[i].split("*********")[0];
+            console.log("name"+node_info[i].split(" 	 ")[0]);
+            var description = node_info[i].split("*********")[1];
+            
+            var markup = "<tr><td><input type='checkbox' name='record'></td><td id='name' name='name'>" + name + "</td><td>" + description + "</td></tr>";
+            $("table tbody").append(markup);
+       }
+        
+        // Find and remove selected table rows
+        $(".submit_checked").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+            	if($(this).is(":checked")){
+					checked_node.push($(this).closest("tr").find('td:eq(1)').text().concat("*********").concat($(this).closest("tr").find('td:eq(2)').text()));
+					console.log(checked_node);
+					localStorage.setItem('checked_node', checked_node);
+                } else{
+					var index = checked_node.indexOf($(this));
+					if (index > -1) {
+                      checked_node.splice(index, 1);
+                      localStorage.setItem('checked_node', checked_node);
+                     }
+					}
+            });
+        });
+    });  
+
+
+</script>
+
+
+<table>
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>ID</th>
+                <th>Description</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    <form action="{% url 'compare' %}">
+    	<button type="submit" class="submit_checked">submit</button>
+    </form>
+{% include "footer.html"%}

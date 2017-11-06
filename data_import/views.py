@@ -10,7 +10,6 @@ import pandas as pd
 import os
 import shutil
 from scipy import sparse, io
-from docutils.parsers import null
 
 
 file_upload_dir = os.path.join(settings.BASE_DIR, 'data')
@@ -75,7 +74,7 @@ def renew(request):
         new_features = request.POST.getlist('new_features')
         file_path = os.path.join(settings.BASE_DIR, 'tmp/tmp.csv')
         process_file(file_path,new_features)
-        content = {'Title': "Feature Processing - Cohort Discovery Tool",
+        content = {'Title': "Step 3: Feature Processing",
                    "listId":"li3",
                    'features': new_features} 
         return render(
@@ -83,7 +82,11 @@ def renew(request):
             'data_import/stp3-fea-processing.html',
             content
         )
-
+def index(request):
+    content = {'Title': "Step 1: Upload Data",
+                   "listId":"li1"}    
+    return render(request, 'data_import/stp1-import.html', content)
+    
 
 def list(request):
     # Handle file upload
@@ -99,7 +102,7 @@ def list(request):
                 shutil.rmtree(file_upload_dir)
             fs.save("tmp.csv", docfile)
             
-            content = {'Title': "Feature Selection - Cohort Discovery Tool",
+            content = {'Title': "Step 2: Feature Selection",
                    "listId":"li2",
                    'features': features} 
             return render(
@@ -109,6 +112,6 @@ def list(request):
             )
 
     else:
-        content = {'Title': "Upload Data - Cohort Discovery Tool",
+        content = {'Title': "Step 1: Upload Data",
                    "listId":"li1"}    
         return render(request, 'data_import/stp1-import.html', content)

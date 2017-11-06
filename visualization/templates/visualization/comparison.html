@@ -1,0 +1,81 @@
+{% include "header.html"%}
+<style type="text/css">
+    form{
+        margin: 20px 0;
+    }
+    form input, button{
+        padding: 5px;
+    }
+    table{
+        width: 100%;
+        margin-bottom: 20px;
+		border-collapse: collapse;
+    }
+    table, th, td{
+        border: 1px solid #cdcdcd;
+    }
+    table th, table td{
+        padding: 10px;
+        text-align: left;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+var checked_node = localStorage.getItem("checked_node");
+var node_info = checked_node.split(",");
+var arrayLength = node_info.length;
+
+console.log(checked_node);
+
+$(document).ready(function(){
+	//for (var j = 0; j < 2; j++){
+    //    for (var i = 0; i < arrayLength; i++) {
+			
+            var item1 = node_info[0].split("*********")[1];
+            var item2 = node_info[1].split("*********")[1];
+            /*
+            var group = node_info[i].split(" ")[1];
+            var feature_1 = node_info[i].split(" ")[2];
+            var feature_2 = node_info[i].split(" ")[3];
+            var feature_3 = node_info[i].split(" ")[4];
+            var feature_4 = node_info[i].split(" ")[5];
+            var feature_5 = node_info[i].split(" ")[6];
+            var feature_6 = node_info[i].split(" ")[7];
+            var feature_7 = node_info[i].split(" ")[8];
+            var feature_8 = node_info[i].split(" ")[9];
+            var feature_9 = node_info[i].split(" ")[10];
+            var dim_1 = node_info[i].split(" ")[11];
+            var dim_2 = node_info[i].split(" ")[12];
+            */
+            var markup = "<tr><td>" + item1 + "</td><td>" + item2 + "</td></tr>";
+			//var markup = "<tr><td>Entity "+i+"</td><td id='name' name='name'>" + name + "</td><td>" + group + "</td><td>" + feature_1 + "</td><td>" + feature_2 + "</td><td>" + feature_3 + "</td><td>" + feature_4 + "</td><td>" + feature_5 + "</td><td>" + feature_6 + "</td><td>" + feature_7 + "</td><td>" + feature_8 + "</td><td>" + feature_9 + "</td><td>" + dim_1 + "</td><td>" + dim_2 + "</td></tr>";
+            $("table tbody").append(markup);
+    //   }
+        
+       // }
+    });  
+
+
+</script>
+
+<table>
+        <thead>
+            <tr>
+                
+             
+                <th>Entity One</th>
+                <th>Entity Two</th>
+                
+              
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    <button>Same cluster</button>
+    <button>Different cluster</button>
+    <form action="/visualization/visual">
+    <button type="submit" class="submit_checked">Return to Step 7</button>
+    </form>
+{% include "footer.html"%}

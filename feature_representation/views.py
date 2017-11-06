@@ -14,7 +14,7 @@ from sklearn.model_selection import train_test_split
 from django.conf  import settings
 import pandas as pd
 import tensorflow as tf
-from scipy import sparse, io
+from scipy import io
 # from pandas.tests.io.parser import index_col
 
 
@@ -102,30 +102,20 @@ def features_representation(request):
             df_reperent = pd.DataFrame(mdl, columns=cols)
             
         else:
-            df_reperent = df_data
-#             df_reperent.to_csv(os.path.join(settings.BASE_DIR, 'data/features_autoencoder.csv'), index=False)
-            
+            df_reperent = pd.DataFrame(df_data.todense())
+         
         df_reperent.to_csv(os.path.join(settings.BASE_DIR, 'data/features_rep.csv'), index=False)       
         # context is a dict of html code, containing three types of features representation
         context = {
-#             'origi': df_data.sample(20).to_html(),
+            'Title': "Step 5: Samples of Feature Representation",
+            'listId':"li5",
             'reprnt': df_reperent.sample(10).to_html(classes=['table', 'table-striped', 'table-bordered'], index=False),
-#             'rep':representation
+
         }
         return render(request,'feature_representation/stp5-rep-view.html', context)
     else:
-        return render(request, 'feature_representation/stp4-fea-representation.html')
-
-
-if __name__ == "__main__":
-    df_data = pd.read_csv('../data/DIAGNOSES_ICD.csv').sample(20)
-    df_data = df_data.fillna(0)
-    # print df.head()
-    probs = topic(df_data)
-    encoded_out = encoder(df_data)
-
-    col_probs = ['topic_{}'.format(i) for i in range(len(probs[0]))]
-    col_encoded = ['dim_{}'.format(i) for i in range(len(encoded_out[0]))]
-
-    df_probs = pd.DataFrame(probs, columns=col_probs)
-    df_encoded = pd.DataFrame(encoded_out, columns=col_encoded)
+        context = {
+            'Title': "Step 4: Feature Representation",
+            'listId':"li4"
+        }
+        return render(request, 'feature_representation/stp4-fea-representation.html',context)

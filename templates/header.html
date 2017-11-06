@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{{Title}}</title>
+	<title>{{Title}} - Cohort Discovery Tool</title>
 {%load static%}
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="{% static 'css/doc.css'%}">
 </head>
 <body>
+<!--  -->
 <header class="bs-docs-nav navbar navbar-static-top" id="top"> 
 <div class="container">
  <div class="navbar-header">
@@ -23,12 +24,12 @@
    <span class="icon-bar"></span>
    <span class="icon-bar"></span>
    <span class="icon-bar"></span> </button>
-   <a href="../" class="navbar-brand">Patient Cohort</a>
+   <a href="{% url 'list' %}" class="navbar-brand">Patient Cohort</a>
   </div> 
   <nav class="collapse navbar-collapse" id="bs-navbar">
    <ul class="nav navbar-nav">
-    <li class="active"> <a href="../getting-started/">Dashboard</a> </li>
-    <li> <a href="../css/">Settings</a> </li>
+    <li class="active"> <a href="#">Dashboard</a> </li>
+    <li> <a href="#">Settings</a> </li>
    </ul>
    </nav>
    </div>
@@ -36,18 +37,18 @@
 
  <div class="bs-docs-header" id="content" tabindex="-1"> 
 	<div class="container"> 
-		<h1>Step 1 Data Import</h1> 
+		<h1>{{Title}}</h1> 
 		<p>An overview of Bootstrap, how to download and use, basic templates and examples, and more.</p> 
 		<div id="carbonads-container" class="container">
 			<div class="carbonad center">
 				<ul class="nav lq bla blc">
-					<li class="lp"><a id="li1" class="ln active" href="stp1-import.html">Step 1</a></li>
-					<li class="lp"><a id="li2" class="ln" href="stp2-fea-selection.html">Step 2</a></li>
-					<li class="lp"><a id="li3" class="ln" href="stp3-fea-processing.html">Step 3</a></li>
-					<li class="lp"><a id="li4" class="ln" href="stp4-fea-representation.html">Step 4</a></li>
-					<li class="lp"><a id="li5" class="ln" href="stp5-rep-view.html">Step 5</a></li>
-					<li class="lp"><a id="li6" class="ln" href="stp6-clu-selection.html">Step 6</a></li>
-					<li class="lp"><a id="li7" class="ln" href="stp7-clu-visualisation.html">Step 7</a></li>
+					<li class="lp"><a id="li1" class="ln active" href="{% url 'list' %}">Step 1</a></li>
+					<li class="lp"><a id="li2" class="ln" href="#">Step 2</a></li>
+					<li class="lp"><a id="li3" class="ln" href="#">Step 3</a></li>
+					<li class="lp"><a id="li4" class="ln" href="/represent">Step 4</a></li>
+					<li class="lp"><a id="li5" class="ln" href="/represent/features">Step 5</a></li>
+					<li class="lp"><a id="li6" class="ln" href="/clustering">Step 6</a></li>
+					<li class="lp"><a id="li7" class="ln" href="/visualization/visual">Step 7</a></li>
 					<li class="lp"><a id="li8" class="ln" href="stp8-dat-exploration.html">Step 8</a></li>
 					<li class="lp"><a id="li9" class="ln" href="stp9-dat-labelling.html">Step 9</a></li>
 					<li class="lp"><a id="li10" class="ln"  href="stp10-met-learning.html">Step 10</a></li>						
