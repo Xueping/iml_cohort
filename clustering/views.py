@@ -91,7 +91,7 @@ def clusteringAndPCA(al_selection,num_clustering):
     for sample_num in range(len(X)):
         dict_in = {}
         for attr_num in range(num_pca+num_attr):
-    
+            dict_in['id'] = str(sample_num)
             if attr_num < num_pca:
                 dict_in['dim_'+str(attr_num+1)] = str(X_trans[sample_num][attr_num])
             else:
