@@ -109,7 +109,7 @@ def features_representation(request):
         # context is a dict of html code, containing three types of features representation
         context = {
 #             'origi': df_data.sample(20).to_html(),
-            'reprnt': df_reperent.sample(20).to_html(classes=['table', 'table-striped', 'table-bordered'], index=False),
+            'reprnt': df_reperent.sample(10).to_html(classes=['table', 'table-striped', 'table-bordered'], index=False),
 #             'rep':representation
         }
         return render(request,'feature_representation/stp5-rep-view.html', context)
