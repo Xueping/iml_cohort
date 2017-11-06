@@ -1,0 +1,83 @@
+,diags
+0,"Mal hyp kid w cr kid V	Pneumonia, organism NOS	Chr nephritis in oth dis	Chron kidney dis stage V	Prim cardiomyopathy NEC	Acidosis	Syst lupus erythematosus	Hyperpotassemia	Sciatica	Iatrogenc hypotnsion NEC	Thrombocytopenia NOS	Anemia in chr kidney dis	Anemia-other chronic dis	Hypocalcemia	Mal hyp kid w cr kid V	End stage renal disease	Nephritis NOS in oth dis	Syst lupus erythematosus	Noninf gastroenterit NEC	Thrombocytopenia NOS	Anemia in chr kidney dis	Iatrogenc hypotnsion NEC	Obstructive sleep apnea	Hemangioma intra-abdom	Chronic pain NEC	Abdmnal pain unspcf site	Abnrml coagultion prfile	Renal dialysis status"
+1,"Ac stomach ulcer w hem	Subendo infarct, initial	Anemia NOS	Crnry athrscl natve vssl	Polymyalgia rheumatica"
+2,Mal neo cereb ventricle	Obstructiv hydrocephalus	Esophageal reflux
+3,Crnry athrscl natve vssl	Intermed coronary synd	Pneumo oth grm-neg bact	Anemia NOS	Pure hypercholesterolem	Tobacco use disorder
+4,"Malign neopl adrenal	Second malig neo liver	Corticoadren overact NEC	Mitral valve disorder	Ac kidny fail, tubr necr	Other postop infection	Cellulitis of trunk	Pleural effusion NOS	Urin tract infection NOS	CHF NOS	Toxic encephalopathy	Hypertension NOS	Hx of GI malignancy NOS	Intestinal bypass status	Long-term use steroids	Pancreatic disorder NEC	Adv eff corticosteroids"
+5,Single lb in-hosp w cs	Need prphyl vc vrl hepat	NB obsrv suspct infect
+6,"Cirrhosis of liver NOS	Thrombocytopenia NOS	CHF NOS	Ac posthemorrhag anemia	Hypertension NOS	DMII wo cmp nt st uncntr	Acute necrosis of liver	Alcohol cirrhosis liver	Acute kidney failure NOS	Hepatorenal syndrome	Acq coagul factor defic	Other pulmonary insuff	Thrombocytopenia NOS	Pneumonia, organism NOS	Chr blood loss anemia	Protein-cal malnutr NOS	Hyposmolality	Hyperpotassemia	Severe sepsis	Alcoh dep NEC/NOS-remiss	Hypertension NOS	Portal hypertension	DMII wo cmp nt st uncntr	Hypothyroidism NOS	Candidias urogenital NEC"
+7,Single lb in-hosp w/o cs	Need prphyl vc vrl hepat
+8,Opn wound wrist w tendon	Injury radial vessels	Injury ulnar vessels	Injury median nerve	Inj cutan senso nerv/arm	Injury ulnar nerve	Injury-cut instrument	Drug abuse NEC-unspec
+9,Single lb in-hosp w/o cs	Need prphyl vc vrl hepat	NB obsrv suspct infect
+10,Single lb in-hosp w/o cs	Tetralogy of fallot	Abn plac NEC/NOS aff NB
+11,"AMI anterior wall, init	Crnry athrscl natve vssl	Hypertension NOS	DMII wo cmp nt st uncntr	Tobacco use disorder"
+12,"Thoracic aortic aneurysm	Pneumonia, organism NOS	Chr airway obstruct NEC	Arterial disease NEC	Crn ath atlg vn bps grft	Crnry athrscl natve vssl	Hypertension NOS	Pure hypercholesterolem	Ath ext ntv at w claudct	Acute kidney failure NOS	Chr kidney dis stage IV	Urin tract infection NOS	Surg compl-heart	Aortic atherosclerosis	Hy kid NOS w cr kid I-IV	Gout NOS	Chr airway obstruct NEC	Iatrogenc hypotnsion NEC	Atrial fibrillation	Hx-prostatic malignancy	Hx-bronchogenic malignan	Prsnl hst oth nfct parst	Inf mcrg rstn pncllins	Perforation of intestine	Intestinal obstruct NEC	Obs chr bronc w(ac) exac	Other postop infection	Severe sepsis	Disrup internal op wound	Pneumonia, organism NOS	Acute kidney failure NOS	Chr kidney dis stage IV	Protein-cal malnutr NOS	Ac on chr diast hrt fail	Hy kid NOS w cr kid I-IV	Atrial fibrillation	CHF NOS	Cor ath unsp vsl ntv/gft	Aortocoronary bypass	Hx-prostatic malignancy	Hx-bronchogenic malignan	Ocl mlt bi art w infrct	Hematoma complic proc	Cva	Ocl vrtb art wo infrct	Hypertension NOS	Pure hypercholesterolem	Asthma NOS	Crnry athrscl natve vssl	Aortocoronary bypass"
+13,Comp-heart valve prosth	Aortic valve disorder	Atrial fibrillation	Chr pulmon heart dis NEC	Hypothyroidism NOS
+14,Twin-mate lb-in hos w cs	Extreme immatur 750-999g	Respiratory distress syn	Neonat jaund preterm del	Perinatal chr resp dis	27-28 comp wks gestation	Primary apnea of newborn	Neonatal bradycardia	Patent ductus arteriosus	Anemia of prematurity	NB cutaneous hemorrhage	Perinatal condition NEC	Retrolental fibroplasia	NB obsrv suspct infect	Need prphyl vc vrl hepat
+15,Secondary malig neo NEC	Second malig neo pleura	Hx of breast malignancy
+16,Single lb in-hosp w cs	Cong heart anomaly NEC	Heavy-for-date infan NEC	Need prphyl vc vrl hepat	NB obsrv suspct infect	NB obs genetc/metabl cnd
+17,Traumatic brain hem NEC	Convulsions NEC	Fall NOS
+18,"Other postop infection	Disrup internal op wound	Surg compl-heart	Atrial fibrillation	Osteomyelit NOS-oth site	DMII wo cmp nt st uncntr	Esophageal reflux	Cor ath unsp vsl ntv/gft	Aortocoronary bypass	Subendo infarct, initial	CHF NOS	Ac posthemorrhag anemia	Crnry athrscl natve vssl	DMII neuro nt st uncntrl	Neuropathy in diabetes	Pure hypercholesterolem	Esophageal reflux"
+19,"Single lb in-hosp w cs	NB intraven hem,grade iv	Preterm NEC 2000-2499g	35-36 comp wks gestation	Need prphyl vc vrl hepat"
+20,Subarachnoid hemorrhage	Convulsions NEC	Hyposmolality	Tobacco use disorder
+21,"Subendo infarct, initial	Crnry athrscl natve vssl	Chr airway obstruct NEC	Urin tract infection NOS	Aortic atherosclerosis	Transient mental dis NOS	Gout NOS	Periph vascular dis NOS	Hypertension NOS	Pure hypercholesterolem	History of tobacco use"
+22,Mitral/aortic val insuff	Crnry athrscl natve vssl	Hypertension NOS	Esophageal reflux	Glaucoma NOS	Hypothyroidism NOS	Periph vascular dis NOS
+23,Sarcoidosis	Toxic encephalopathy	Urin tract infection NOS	Depressive disorder NEC	Adv eff opiates	Spond compr thor sp cord	Sarcoidosis	Chr airway obstruct NEC	Lipoma NEC	Long-term use steroids	Spinal stenosis-thoracic	Esophageal reflux	Hypertension NOS	DMII wo cmp nt st uncntr
+24,"Moyamoya disease	Pneumonia, organism NOS	Pure hypercholesterolem	Hypertension NOS"
+25,Crnry athrscl natve vssl	Atrial fibrillation	Atrial flutter	DMII neuro nt st uncntrl	Neuropathy in diabetes	Thyrotox NOS no crisis	Pure hypercholesterolem	BPH w/o urinary obs/LUTS	Status-post ptca	History of tobacco use
+26,Malig neopl kidney
+27,Sepsis	Opioid dependence-unspec	Thrush	Bact pleur/effus not TB	Pyogen arthritis-ankle	Pyogen arthritis-hand
+28,Cl skull vlt fx-brf coma	Alcohol abuse-unspec	Cocaine abuse-unspec	Mv coll w pedest-pedest	Open wound of scalp	Abnormality of gait	Sixth nerve palsy	Injury cranial nerve NEC
+29,Single lb in-hosp w/o cs	Preterm NEC 2500+g	35-36 comp wks gestation	Resp prob after brth NEC	Neonat jaund preterm del	Birth trauma NEC	Heavy-for-date infan NEC	Need prphyl vc vrl hepat	NB obs genetc/metabl cnd
+30,Intracerebral hemorrhage	Hypothyroidism NOS	Hypertension NOS	Mental disor NEC oth dis	Depressive disorder NEC	Accidental op laceration	Hypopotassemia	Hypertension NOS	Hypothyroidism NOS	Ac posthemorrhag anemia	Depressive disorder NEC
+31,"Pneumonia, organism NOS	Prim cardiomyopathy NEC	Acidosis	Acute kidney failure NOS	Acute necrosis of liver	Chronic kidney dis NOS	Thrombocytopenia NOS	CHF NOS	Anemia NOS	Pneumonia, organism NOS	Prim cardiomyopathy NEC	Systolic hrt failure NOS	CHF NOS	Acute kidney failure NOS	Chronic kidney dis NOS	Protein-cal malnutr NOS	Hyposmolality	Anemia NOS	Hx-antibiot allergy NEC	Desensitiza to allergens"
+32,Single lb in-hosp w cs	Preterm NEC 1750-1999g	Lt-for-dates 1750-1999g	Neonatal hypoglycemia	Neonat jaund preterm del	35-36 comp wks gestation	Polycythemia neonatorum
+33,Single lb in-hosp w cs	Ventricular sept defect	Need prphyl vc vrl hepat
+34,Poison-tranquilizer NEC	Acidosis	Schizophrenia NOS-unspec	Poison-psychotropic agt	Anemia NOS	B-complex defic NEC
+35,Single lb in-hosp w/o cs	Respiratory distress syn	Cong mitral insufficienc	Neonat jaund preterm del	Acidosis	Neonatal bradycardia	Preterm NEC 2500+g	35-36 comp wks gestation	Injuries to scalp NEC	NB obsrv suspct infect	Patent ductus arteriosus	Cong heart anomaly NEC
+36,"AMI anterolateral, init	Accidental op laceration	Urin tract infection NOS	Crnry athrscl natve vssl	Hypertension NOS	Pure hypercholesterolem	Hx-uterus malignancy NEC	History of tobacco use"
+37,Single lb in-hosp w cs	Exceptionally large baby	Need prphyl vc vrl hepat	NB obsrv suspct infect	NB obs genetc/metabl cnd
+38,Aortic valve disorder	Pulmonary collapse	Urin tract infection NOS	Surg comp nerv systm NEC	Mononeuritis leg NOS	Hypertension NOS	Pure hypercholesterolem	DMII wo cmp nt st uncntr	Esophageal reflux	Diaphragmatic hernia	History of tobacco use
+39,"True post infarct, init	CHF NOS	Crnry athrscl natve vssl	Pure hypercholesterolem	Pure hyperglyceridemia"
+40,Poisoning-opium NOS	Cirrhosis of liver NOS	Opioid dependence-contin	Pois-benzodiazepine tran	Acc poison-opiates NEC	Acc poisn-benzdiaz tranq
+41,"AMI anterior wall, init	Parox ventric tachycard	Crnry athrscl natve vssl	Conduction disorder NEC"
+42,Cl skl w oth fx-coma NOS	Open wound of forehead	Struck by falling object
+43,Intracerebral hemorrhage	Mycs fng unsp xtrndl org	Hypertension NOS
+44,Single lb in-hosp w cs	Preterm NEC 2500+g	35-36 comp wks gestation	Routine circumcision
+45,Ocl crtd art wo infrct	Rheumatic heart failure	Mitral/aortic val insuff	Hyp kid NOS w cr kid V	Ulcer other part of foot	Esophageal reflux	Pure hypercholesterolem	DMII wo cmp nt st uncntr	Chr ischemic hrt dis NEC
+46,Malig neo brain NOS	Malig neo brain NOS	Compression of brain	Nausea with vomiting	Constipation NOS
+47,"Pneumonia, organism NOS	Trnspl status-bne marrow	Myelodysplastic synd NOS	Atrial fibrillation	Cor ath unsp vsl ntv/gft	Dysthymic disorder	Hyperlipidemia NEC/NOS	Hypothyroidism NOS	BPH w urinary obs/LUTS	Nocturia	Obstructive sleep apnea	Paralysis agitans	Tobacco use disorder	Hx-lymphatic malign NEC	Aortocoronary bypass	Heart valve replac NEC	Sepsis	Chr kidney dis stage III	Aortic valve disorder	Oth lymp unsp xtrndl org	Trspl sts-perip stm cell	Hemorrhage complic proc	Paralysis agitans	Anxiety state NOS	Esophageal reflux	BPH w/o urinary obs/LUTS	Abn react-procedure NEC	Crnry athrscl natve vssl	Thoracic aortic aneurysm"
+48,Ostium primum defect	Mitral valve disorder
+49,"Twin-mate lb-in hos w cs	Preterm NEC 1250-1499g	27-28 comp wks gestation	Respiratory distress syn	Perinatal chr resp dis	Neonat jaund preterm del	NB intraven hem,grade i	Primary apnea of newborn	Anemia of prematurity	NB obsrv suspct infect	Need prphyl vc vrl hepat"
+50,Heart chamber lacer-opn	Pleural effusion NOS	Pericardial disease NOS	Assault-cutting instr
+51,Twin-mate lb-in hos w cs	Neonat jaund preterm del	Preterm NEC 1500-1749g	33-34 comp wks gestation	Hemangioma skin	NB obsrv suspct infect
+52,Reticulosarcoma mult	Regional enteritis NOS	Hematoma complic proc	Acute respiratry failure	Acq arterioven fistula	Sarcoidosis	Ac stomach ulcer w hem	Defibrination syndrome
+53,"Extreme immatur 500-749g	NB septicemia [sepsis]	Acidosis	Respiratory distress syn	Perinatal chr resp dis	NB intraven hem,grade i	Neonat jaund preterm del	Anemia of prematurity	Retrolental fibroplasia"
+54,Single lb in-hosp w/o cs	Extreme immatur 750-999g	Respiratory distress syn	NB septicemia [sepsis]	Neonat jaund preterm del	25-26 comp wks gestation	Anemia of prematurity	Primary apnea of newborn	Neonatal bradycardia	Patent ductus arteriosus	Retrolental fibroplasia	Straig amin-acid met NEC
+55,"Amyotrophic sclerosis	Acute & chronc resp fail	Pneumonia, organism NOS	Atrial fibrillation	Hypertension NOS	BPH w/o urinary obs/LUTS	Cardiac dysrhythmias NEC	Anemia NOS	Hyposmolality	Brachial neuritis NOS	Mitral valve disorder	Hypotension NOS	Unkn cause morb/mort NEC	Hypertension NOS	Cardiac dysrhythmias NEC	Urinary frequency"
+56,Atriovent block complete
+57,"Brain lacer NEC w/o coma	Fracture of sternum-clos	Liver laceration, minor	Spleen injury NEC-closed	Pseudomonal pneumonia	Traum pneumohemothor-cl"
+58,Crnry athrscl natve vssl	Aortic valve disorder	Intermed coronary synd	Atrial fibrillation	Pure hypercholesterolem	Hypertension NOS	Renal artery atheroscler
+59,Nonrupt cerebral aneurym	Hypothyroidism NOS
+60,Crnry athrscl natve vssl	Angina pectoris NEC/NOS	Hypertension NOS	Pure hypercholesterolem	Skin sensation disturb	Hx-skin malignancy NEC
+61,Malfunc prosth hrt valve	Aortic valve disorder	Ruptur thoracic aneurysm	Atriovent block complete	Atrial fibrillation
+62,Acute respiratry failure	Food/vomit pneumonitis	Staphylococcal pneu NOS	Iatrogenic pneumothorax	Cardiac arrest	Anoxic brain damage	Persistent vegtv state	Acidosis
+63,Single lb in-hosp w/o cs	Respiratory distress syn	Neonat jaund preterm del	Preterm NEC 1750-1999g	31-32 comp wks gestation	Hypospadias	Congenital chordee	NB obsrv suspct infect
+64,"Sec mal neo brain/spine	Intracerebral hemorrhage	Mal neo upper lobe lung	Pneumonia, organism NOS	Hypertension NOS	History of tobacco use	Abnormal loss of weight	Adrenal disorder NOS	Intracerebral hemorrhage	Sec mal neo brain/spine	Mal neo bronch/lung NOS	Cardiac arrest	Hypertension NOS"
+65,Single lb in-hosp w cs	Neonatal hypoglycemia	Lt-for-dates 2000-2499g	37+ comp wks gestation	Fetal/neonatal jaund NOS	Routine circumcision	NB temp regulat dis NEC
+66,"Pneumonia, organism NOS	CHF NOS	Huntington's chorea	Food/vomit pneumonitis"
+67,Single lb in-hosp w cs	Need prphyl vc vrl hepat	NB obsrv suspct infect
+68,"Shock w/o trauma NEC	Acute kidney failure NOS	Cardiac arrest	Subendo infarct, initial	CHF NOS	Cellulitis of leg	Prim cardiomyopathy NEC	Protein-cal malnutr NOS"
+69,Pneumocystosis	Cachexia	Alkalosis	Bacteremia	Cirrhosis of liver NOS	Intermed coronary synd	Inf mcrg rstn pncllins	Adv eff antiviral drugs
+70,Single lb in-hosp w/o cs	Need prphyl vc vrl hepat	NB obsrv suspct infect
+71,Hyp kid NOS w cr kid V	Surg comp-peri vasc syst	Hyperpotassemia	Anemia NOS	Dis phosphorus metabol	History of tobacco use
+72,Single lb in-hosp w cs	Need prphyl vc vrl hepat	NB obsrv suspct infect
+73,Single lb in-hosp w cs	NB transitory tachypnea	Fetal/neonatal jaund NOS	NB obsrv suspct infect	Routine circumcision	Need prphyl vc vrl hepat
+74,Intracerebral hemorrhage	Food/vomit pneumonitis	CHF NOS	Acute kidney failure NOS	Hypertension NOS
+75,Single lb in-hosp w/o cs	Neonat jaund preterm del	29-30 comp wks gestation	Preterm NEC 1250-1499g	NB obsrv suspct infect
+76,Mal neo parietal lobe
+77,Mal neo pancreas head	Cholelith w cholecys NEC	Surg compl-heart	Cardiac arrest	Hemorrhage complic proc	Hypertension NOS	Peritoneal adhesions	Incisional hernia	Abn react-anastom/graft
+78,Crnry athrscl natve vssl	Intermed coronary synd	DMII wo cmp nt st uncntr	Hypertension NOS	Pure hypercholesterolem
+79,Single lb in-hosp w/o cs	NB obsrv suspct infect	Routine circumcision	Need prphyl vc vrl hepat
+80,Pericardial disease NOS	Pleural effusion NOS	Cardiogenic shock	Hypotension NOS	Depressive disorder NEC	Cervical disc displacmnt	Joint pain-l/leg	Hyperlipidemia NEC/NOS	Secundum atrial sept def	Iatrogenc hypotnsion NEC	Hx-circulatory dis NEC	Hyperlipidemia NEC/NOS
+81,DMII oth nt st uncntrld	Convulsions NEC	Recur depr psych-severe	Long-term use of insulin	Adv eff insulin/antidiab	Long-term use meds NEC	Disease of pharynx NEC	Sleep apnea NOS	Abnormal loss of weight	Hypertension NOS	Rt bundle branch block

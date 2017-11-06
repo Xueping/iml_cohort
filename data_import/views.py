@@ -10,6 +10,7 @@ import pandas as pd
 import os
 import shutil
 from scipy import sparse, io
+from docutils.parsers import null
 
 
 file_upload_dir = os.path.join(settings.BASE_DIR, 'data')
@@ -22,22 +23,32 @@ def handle_uploaded_file(f):
 
 #accept the file, process it and store it locally in csv format
 def process_file(f,new_features):
+    diag_dict = pd.read_csv(os.path.join(settings.BASE_DIR, 'data/D_ICD_DIAGNOSES.csv'))
     doc = pd.read_csv(f)
     new_doc = doc[new_features]
     distinct_dias = new_doc.ICD9_CODE.unique()
     distinct_pates = new_doc.SUBJECT_ID.unique()
     diags = []
+    diags_desc = []
     data = []
+    diaList = distinct_dias.tolist()
     for p in distinct_pates:
         #print p
         vec = np.zeros(len(distinct_dias),dtype=int)
         ps = new_doc[new_doc['SUBJECT_ID']==p]
-        str_diags = '\t'.join(ps.ICD9_CODE)
+        str_diags_codes = '\t'.join(ps.ICD9_CODE)
+        descs = []
         for code in ps.ICD9_CODE:
-            index = distinct_dias.tolist().index(code)
+            index = diaList.index(code)
             vec[index] += 1
+            desc = diag_dict[diag_dict['ICD9_CODE']==code].SHORT_TITLE
+            if (not desc.empty):
+                descs.append(desc.iloc[0])
+            
+        str_diags_desc = '\t'.join(descs)
+        diags_desc.append(str_diags_desc)
         data.append(vec)
-        diags.append(str_diags)
+        diags.append(str_diags_codes)
         
     sparse_data = sparse.csr_matrix(data)
 
@@ -45,6 +56,7 @@ def process_file(f,new_features):
     file_path_pationid = os.path.join(settings.BASE_DIR, 'data/outcome_pation.csv')
     file_path_deid = os.path.join(settings.BASE_DIR, 'data/outcome_deid.csv')
     file_path_diags = os.path.join(settings.BASE_DIR, 'data/outcome_diags.csv')
+    file_path_diags_desc = os.path.join(settings.BASE_DIR, 'data/outcome_diags_desc.csv')
 
 #     new_data = pd.DataFrame(data)
     distinct_dias_data = pd.DataFrame(distinct_dias)
@@ -55,7 +67,7 @@ def process_file(f,new_features):
     distinct_dias_data.to_csv(file_path_deid,header=False)
     distinct_pates_data.to_csv(file_path_pationid,header=False)
     pd.DataFrame(data=diags,columns=['diags']).to_csv(file_path_diags)
-
+    pd.DataFrame(data=diags_desc,columns=['diags']).to_csv(file_path_diags_desc)
 
 
 def renew(request):

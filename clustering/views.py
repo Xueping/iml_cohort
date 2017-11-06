@@ -83,29 +83,41 @@ def clusteringAndPCA(al_selection,num_clustering):
     pca.fit(X)
     X_trans = pca.transform(X)
     
+    x_trans = pd.DataFrame(data=X_trans,columns=['x','y'])
     
-    num_attr = X.shape[1]
+    diag_dict = pd.read_csv(os.path.join(settings.BASE_DIR, 'data/outcome_diags_desc.csv'))
+    frames = [x_trans,  diag_dict ]  
+    visualData =  pd.concat(frames, axis=1)
+    visualData['cluster'] = y_pred  
     
-    dict_out = {}
-    list_tmp = []
-    for sample_num in range(len(X)):
-        dict_in = {}
-        for attr_num in range(num_pca+num_attr):
-            dict_in['id'] = str(sample_num)
-            if attr_num < num_pca:
-                dict_in['dim_'+str(attr_num+1)] = str(X_trans[sample_num][attr_num])
-            else:
-                dict_in['feature_'+str(attr_num-num_pca+1)] = str(X.iloc[sample_num,attr_num-num_pca])
-#                 print X.iloc[sample_num,attr_num-num_pca]
-        dict_in['label'] = str(y_pred[sample_num])
-        list_tmp.append(dict_in)
+    visualData = visualData.rename(columns = {'Unnamed: 0':'id'})
     
-    dict_out['nodes'] = list_tmp
+    visualData.to_csv(os.path.join(settings.BASE_DIR, 'data/outcome_visual.csv'), index=False) 
     
-    # create a json file for all the original attr and PCA attr
-    with open(os.path.join(settings.BASE_DIR, 'data/clustering_pca.json'),'w') as output:
-        #a = np.asarray(dict_out).tolist()
-        json.dump(dict_out,output)
+    
+    
+#     num_attr = X.shape[1]
+#     
+#     dict_out = {}
+#     list_tmp = []
+#     for sample_num in range(len(X)):
+#         dict_in = {}
+#         for attr_num in range(num_pca+num_attr):
+#             dict_in['id'] = str(sample_num)
+#             if attr_num < num_pca:
+#                 dict_in['dim_'+str(attr_num+1)] = str(X_trans[sample_num][attr_num])
+#             else:
+#                 dict_in['feature_'+str(attr_num-num_pca+1)] = str(X.iloc[sample_num,attr_num-num_pca])
+# #                 print X.iloc[sample_num,attr_num-num_pca]
+#         dict_in['label'] = str(y_pred[sample_num])
+#         list_tmp.append(dict_in)
+#     
+#     dict_out['nodes'] = list_tmp
+#     
+#     # create a json file for all the original attr and PCA attr
+#     with open(os.path.join(settings.BASE_DIR, 'data/clustering_pca.json'),'w') as output:
+#         #a = np.asarray(dict_out).tolist()
+#         json.dump(dict_out,output)
 
 
 '''
