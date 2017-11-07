@@ -4,7 +4,7 @@
 <key>DJANGO_MANAGE_LOCATION</key>
 <value>manage.py</value>
 <key>DJANGO_SETTINGS_MODULE</key>
-<value>arc_doh.settings</value>
+<value>iml_cohort.settings</value>
 </pydev_variables_property>
 <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
 <path>/${PROJECT_DIR_NAME}</path>
