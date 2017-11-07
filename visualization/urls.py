@@ -5,7 +5,7 @@ from .views import explore
 from .views import compare
 
 urlpatterns = [
-    url(r'^visual/$', visual, name='list'),
+    url(r'^visual/$', visual, name='visual'),
     url(r'^explore/$', explore, name='explore'),
     url(r'^compare/$', compare, name='compare'),
 ]

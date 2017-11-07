@@ -98,7 +98,7 @@ d3.csv("{% static 'data/outcome_visual.csv'%}", function(error, data) {
       .attr("x", width)
       .attr("y", -6)
       .style("text-anchor", "end")
-      .text("x");
+      .text("X");
 
   // y-axis
   svg.append("g")
@@ -110,7 +110,7 @@ d3.csv("{% static 'data/outcome_visual.csv'%}", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("y (g)");
+      .text("Y");
 
   // draw dots
   svg.selectAll(".dot")

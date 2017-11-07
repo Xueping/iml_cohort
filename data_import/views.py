@@ -35,7 +35,7 @@ def process_file(f,new_features):
         #print p
         vec = np.zeros(len(distinct_dias),dtype=int)
         ps = new_doc[new_doc['SUBJECT_ID']==p]
-        str_diags_codes = '\t'.join(ps.ICD9_CODE)
+        str_diags_codes = '\t'.join([str(code) for code in ps.ICD9_CODE])
         descs = []
         for code in ps.ICD9_CODE:
             index = diaList.index(code)
@@ -88,7 +88,7 @@ def index(request):
     return render(request, 'data_import/stp1-import.html', content)
     
 
-def list(request):
+def upload(request):
     # Handle file upload
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)

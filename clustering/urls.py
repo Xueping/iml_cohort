@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     # url(r'^$', views.index, name='index'),
     # url(r'^upload', views.upload_file, name='upload_file'),
-    url(r'^$', views.clusteringMethod, name="clusteringMethod"),
+    url(r'^$', views.clusteringMethod, name="clustering_index"),
     url(r'^clustering', views.clusteringMethod, name="clusteringMethod")
 
 ]

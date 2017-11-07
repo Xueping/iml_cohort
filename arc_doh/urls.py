@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^clustering/', include('clustering.urls')),
     url(r'^data_import/', include('data_import.urls')),
     url(r'^represent/', include('feature_representation.urls')),
-#     url(r'^metric/', include('metric.urls')),
+    url(r'^metric/', include('metric.urls')),
     url(r'^visualization/', include('visualization.urls')),
     
 ]
