@@ -1,4 +1,12 @@
 {% include "header.html"%}
+
+<form action="{% url "labeling" %}" id="hiddenform" method="POST">
+{% csrf_token %}
+  <input type="hidden" name="id1" />
+  <input type="hidden" name="id2" />
+  <input type="hidden" name="sim" />
+</form>
+
 <style type="text/css">
     form{
         margin: 20px 0;
@@ -52,11 +60,27 @@ $(document).ready(function(){
             $("table tbody").append(markup);
     //   }
         
+            $("#hiddenform input[name='id1']").val(node_info[0].split("*********")[0]);
+            $("#hiddenform input[name='id2']").val(node_info[1].split("*********")[0]);
+            
+            $("#samebtn").click(function(e){
+                $("#hiddenform input[name='sim']").val(1);
+                $("#hiddenform").submit();
+            });
+    
+            $("#diffbtn").click(function(e){
+                $("#hiddenform input[name='sim']").val(-1);
+                $("#hiddenform").submit();
+            });            
+            
        // }
+            
     });  
 
 
 </script>
+
+
 
 <table>
         <thead>
@@ -73,8 +97,8 @@ $(document).ready(function(){
             
         </tbody>
     </table>
-    <button>Same cluster</button>
-    <button>Different cluster</button>
+    <button id="samebtn">Same cluster</button>
+    <button id="diffbtn">Different cluster</button>
     <form action="/visualization/visual">
     <button type="submit" class="submit_checked">Return to Step 7</button>
     </form>

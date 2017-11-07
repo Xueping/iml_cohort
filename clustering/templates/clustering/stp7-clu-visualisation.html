@@ -183,4 +183,9 @@ function uniqBy(a, key) {
 <form action="{% url 'explore' %}">
     <button>Data Exploration</button>
 </form>
+{% if metric%}
+
+<button class="btn btn-primary center-block" type="button" onclick="window.location.href='{% url "metric_update" %}'">Update Clustering</button>
+{% endif %}
+
 {% include "footer.html"%}

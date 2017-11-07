@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cohort',
-    'policy',
+#     'policy',
     'iml_cohort',
     'clustering',
     'data_import',

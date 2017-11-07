@@ -47,24 +47,24 @@ def select_algorithm(selection,num_clus ,X):
         print "please input a number: 0/1/2/3"
         
 def clusteringMethod(request):
-    """
-    Features representation of original, topics, and auto encoder features
-    :param request: request from the form in feature_representation/features.html
-    :return: render the representation of features in feature_representation/results.html
-    """
+ 
     if request.method == 'POST':
+        #get parameters from request
         al_selection = request.POST.get("clusteringModel")  # get the number of topics
         num_clustering = int(request.POST.get("clu_num"))  # get the dimension of encoded features
+        
+        #put clustering parameters to sessions
         request.session['clustering'] = al_selection
         request.session['num_cluster'] = num_clustering
 
         #read previous step's data
         data = pd.read_csv(os.path.join(settings.BASE_DIR, 'data/features_rep.csv'))
+        
+        #execute clustering and dimension reduction 
         clusteringAndTSNE(data,al_selection,num_clustering)
-#         clusteringAndPCA(data,al_selection,num_clustering)
-        # context is a dict of html code, containing three types of features representation
-        content = {'Title': "Step 7: Clustering Visualization",
-                   "listId":"li7"} 
+        
+        #return results to new page
+        content = {'Title': "Step 7: Clustering Visualization","listId":"li7"}
         return render(request,'clustering/stp7-clu-visualisation.html',content)
     else:
         content = {'Title': "Step 6: Clustering Model Selection",
