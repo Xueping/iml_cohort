@@ -39,8 +39,10 @@ def update(request):
         row = df_data.iloc[[rid]]
         trainedData.append(row)
         
-    print trainedData.dtpye
-    print cmatrix.dtpye
+    trainedData = pd.concat(trainedData,axis = 0).as_matrix()   
+        
+#     print trainedData.to_matrix()
+#     print cmatrix.dtpye
     
     metric = SDML().fit(trainedData, cmatrix)  
     
