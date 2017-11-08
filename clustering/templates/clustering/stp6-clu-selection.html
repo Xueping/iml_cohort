@@ -1,14 +1,19 @@
 {% include "header.html"%}
 
-<main role="main">
+<style>
+	div.selectrow {
+		padding-top: 27px;
+	}
+</style>
+ <main role="main">
 <!-- here for cluster selection -->
 	<div class="page-content">
 		<div class="container">
 			<form class="form-horizontal" action="./clustering" method="post">
              	{% csrf_token %}
 			  <div class="form-group">
-			    <label for="original_checkbox" class="col-sm-2 control-label">KMeans</label>
-			    <div class="col-sm-10">
+			    <label for="original_checkbox" class="col-sm-2 control-label"><h3>KMeans</h3></label>
+			    <div class="col-sm-10 selectrow">
 			      <div class="radio">
 			        <label>
 			          <input id="optionsRadios1" type="radio" checked name="clusteringModel" value="KMeans" aria-label="...">
@@ -28,10 +33,10 @@
 					<span id="helpBlock-example" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.In digital circuits, one-hot is a group of bits among which the legal combinations of values are only those with a single high (1) bit and all the others low (0).[1] A similar implementation in which all bits are '1' except one '0' is sometimes called one-cold.</span>
 			    </div>
 			  </div>
-			  <br />
+			  <hr>
 			  <div class="form-group">
-			    <label for="original_checkbox" class="col-sm-2 control-label">MiniBatchKMeans</label>
-			    <div class="col-sm-10">
+			    <label for="original_checkbox" class="col-sm-2 control-label"><h3>MiniBatchKMeans</h3></label>
+			    <div class="col-sm-10 selectrow">
 			      <div class="radio">
 			        <label>
 			          <input id="optionsRadios2" type="radio" name="clusteringModel" value="MiniBatchKMeans" aria-label="...">
@@ -51,9 +56,10 @@
 					<span id="helpBlock-example" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
 			    </div>
 			  </div>
+			  <hr>
 			  		  <div class="form-group">
-			    <label for="original_checkbox" class="col-sm-2 control-label">Birch</label>
-			    <div class="col-sm-10">
+			    <label for="original_checkbox" class="col-sm-2 control-label"><h3>Birch</h3></label>
+			    <div class="col-sm-10 selectrow">
 			      <div class="radio">
 			        <label>
 			          <input id="optionsRadios3" type="radio" name="clusteringModel" value="Birch" aria-label="...">
@@ -73,10 +79,10 @@
 					<span id="helpBlock-example" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.In digital circuits, one-hot is a group of bits among which the legal combinations of values are only those with a single high (1) bit and all the others low (0).[1] A similar implementation in which all bits are '1' except one '0' is sometimes called one-cold.</span>
 			    </div>
 			  </div>
-			  <br />
+			  <hr>
 			  <div class="form-group">
-			    <label for="original_checkbox" class="col-sm-2 control-label">AgglomerativeClustering</label>
-			    <div class="col-sm-10">
+			    <label for="original_checkbox" class="col-sm-2 control-label"><h3>AgglomerativeClustering</h3></label>
+			    <div class="col-sm-10 selectrow">
 			      <div class="radio">
 			        <label>
 			          <input id="optionsRadios4" type="radio" name="clusteringModel" value="AgglomerativeClustering" aria-label="...">
@@ -110,5 +116,5 @@
 			</form>
 		</div>
 	</div>
-</main>
+</main>	
 {% include "footer.html"%}
