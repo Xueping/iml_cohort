@@ -40,7 +40,7 @@ def process_file(f,new_features):
         for code in ps.DIAGNOSES_CODE:
             index = diaList.index(code)
             vec[index] += 1
-            desc = diag_dict[diag_dict['DIAGNOSES_CODE']==code].SHORT_TITLE
+            desc = diag_dict[diag_dict['ICD9_CODE']==code].SHORT_TITLE
             if (not desc.empty):
                 descs.append(desc.iloc[0])
             
