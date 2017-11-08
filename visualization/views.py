@@ -39,14 +39,16 @@ def labeling(request):
     print id1, id2, label
     
     if id1 <> None:
+        
+        if len(id1)<4 and len(id2)<4:
     
-        df = pd.DataFrame([[id1, id2, label]],columns=['id1','id2','label'])
-        
-        df_label = pd.read_csv(os.path.join(settings.BASE_DIR, 'data/outcome_labels.csv'))
-        
-        frame = pd.concat([df_label,df])
-        
-        frame.to_csv(os.path.join(settings.BASE_DIR, 'data/outcome_labels.csv'), index=False)
+            df = pd.DataFrame([[id1, id2, label]],columns=['id1','id2','label'])
+            
+            df_label = pd.read_csv(os.path.join(settings.BASE_DIR, 'data/outcome_labels.csv'))
+            
+            frame = pd.concat([df_label,df])
+            
+            frame.to_csv(os.path.join(settings.BASE_DIR, 'data/outcome_labels.csv'), index=False)
       
     context = {
             'Title': "Step 7: Cluster Visualization",
