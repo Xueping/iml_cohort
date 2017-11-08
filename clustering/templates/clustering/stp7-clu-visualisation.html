@@ -141,7 +141,7 @@ d3.select(this)
 .attr("r", 5.5)
 .style("fill","steelblue")
 .style("stroke","steelblue");
-node_list.push(d.id.concat("*********").concat(d.diags));
+node_list.push(d.id.concat("*********").concat(d.diags).replace(',',' '));
 
 node_list = uniqBy(node_list,JSON.stringify)
 localStorage.setItem('node_list', node_list);
