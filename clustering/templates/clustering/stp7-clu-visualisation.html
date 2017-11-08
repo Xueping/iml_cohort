@@ -8,6 +8,13 @@
 
 <style>
 
+	#chart {
+		position: fixed;
+		left: 0px;
+		right: 0px;
+		top: 0px;
+		bottom: 0px;
+	}
 .axis path,
 .axis line {
   fill: none;
@@ -27,12 +34,17 @@
 }
 </style>
 <body>
+	<div id="chart"></div>
 <script src="{% static 'js/d3.v3.min.js'%}"></script>
 
 <script>
+var charDiv = document.getElementById("chart");
+	
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
+var svg_width = chartDiv.clientWidth;
+var svg_height = charDiv.clientHeight;
 var node_list = [];
 /* 
  * value accessor - returns the value to encode for a given data object.
@@ -59,9 +71,9 @@ var cValue = function(d) { return d.cluster;},
     color = d3.scale.category10();
 
 // add the graph canvas to the body of the webpage
-var svg = d3.select("body").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+var svg = d3.select(chartDiv).append("svg")
+    .attr("width", svg_width)
+    .attr("height", svg_height)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
