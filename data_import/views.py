@@ -25,8 +25,8 @@ def process_file(f,new_features):
     diag_dict = pd.read_csv(os.path.join(settings.BASE_DIR, 'data/D_ICD_DIAGNOSES.csv'))
     doc = pd.read_csv(f)
     new_doc = doc[new_features]
-    distinct_dias = new_doc.ICD9_CODE.unique()
-    distinct_pates = new_doc.SUBJECT_ID.unique()
+    distinct_dias = new_doc.DIAGNOSES_CODE.unique()
+    distinct_pates = new_doc.PATIENT_ID.unique()
     diags = []
     diags_desc = []
     data = []
