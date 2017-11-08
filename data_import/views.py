@@ -34,13 +34,13 @@ def process_file(f,new_features):
     for p in distinct_pates:
         #print p
         vec = np.zeros(len(distinct_dias),dtype=int)
-        ps = new_doc[new_doc['SUBJECT_ID']==p]
+        ps = new_doc[new_doc['PATIENT_ID']==p]
         str_diags_codes = '\t'.join([str(code) for code in ps.ICD9_CODE])
         descs = []
         for code in ps.ICD9_CODE:
             index = diaList.index(code)
             vec[index] += 1
-            desc = diag_dict[diag_dict['ICD9_CODE']==code].SHORT_TITLE
+            desc = diag_dict[diag_dict['DIAGNOSES_CODE']==code].SHORT_TITLE
             if (not desc.empty):
                 descs.append(desc.iloc[0])
             
