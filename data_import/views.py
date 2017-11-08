@@ -35,7 +35,7 @@ def process_file(f,new_features):
         #print p
         vec = np.zeros(len(distinct_dias),dtype=int)
         ps = new_doc[new_doc['PATIENT_ID']==p]
-        str_diags_codes = '\t'.join([str(code) for code in ps.ICD9_CODE])
+        str_diags_codes = '\t'.join([str(code) for code in ps.DIAGNOSES_CODE])
         descs = []
         for code in ps.DIAGNOSES_CODE:
             index = diaList.index(code)
