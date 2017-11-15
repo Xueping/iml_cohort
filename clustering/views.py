@@ -64,7 +64,7 @@ def clusteringMethod(request):
         clusteringAndTSNE(data,al_selection,num_clustering)
         
         #return results to new page
-        content = {'Title': "Step 7: Clustering Visualization","listId":"li7"}
+        content = {'Title': "Step 7: Cohort Visualization","listId":"li7"}
         return render(request,'clustering/stp7-clu-visualisation.html',content)
     else:
         content = {'Title': "Step 6: Cohort Model Selection",

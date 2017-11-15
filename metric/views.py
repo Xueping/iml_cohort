@@ -47,7 +47,7 @@ def update(request):
     
     clusteringAndTSNE(newData,al_selection,num_clustering)
         # context is a dict of html code, containing three types of features representation
-    content = {'Title': "Step 7: Clustering Visualization",
+    content = {'Title': "Step 7: Cohort Visualization",
                "listId":"li7"} 
     return render(request,'clustering/stp7-clu-visualisation.html',content)
 

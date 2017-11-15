@@ -51,7 +51,7 @@ def labeling(request):
             frame.to_csv(os.path.join(settings.BASE_DIR, 'data/outcome_labels.csv'), index=False)
       
     context = {
-            'Title': "Step 7: Cluster Visualization",
+            'Title': "Step 7: Cohort Visualization",
             'listId':"li7",
             'metric':True
         }
