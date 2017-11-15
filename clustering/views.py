@@ -67,7 +67,7 @@ def clusteringMethod(request):
         content = {'Title': "Step 7: Clustering Visualization","listId":"li7"}
         return render(request,'clustering/stp7-clu-visualisation.html',content)
     else:
-        content = {'Title': "Step 6: Clustering Model Selection",
+        content = {'Title': "Step 6: Cohort Model Selection",
                    "listId":"li6"} 
         return render(request, 'clustering/stp6-clu-selection.html',content)
 
