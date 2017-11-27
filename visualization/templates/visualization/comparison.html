@@ -1,5 +1,5 @@
 {% include "header.html"%}
-
+{%load static%}
 <form action="{% url "labeling" %}" id="hiddenform" method="POST">
 {% csrf_token %}
   <input type="hidden" name="id1" />
@@ -27,7 +27,8 @@
         text-align: left;
     }
 </style>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<script src="{% static 'js/jquery.min.js'%}"></script>
 <script>
 var checked_node = localStorage.getItem("checked_node");
 var node_info = checked_node.split(",");

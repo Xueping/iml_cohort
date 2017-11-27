@@ -1,4 +1,5 @@
 {% include "header.html"%}
+{%load static%}
 <style type="text/css">
     form{
         margin: 20px 0;
@@ -19,7 +20,8 @@
         text-align: left;
     }
 </style>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<script src="{% static 'js/jquery.min.js'%}"></script>
 <script>
 	
 var node_list = localStorage.getItem("node_list");	
