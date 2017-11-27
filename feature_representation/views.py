@@ -27,7 +27,8 @@ def topic(df, num_topics=5):
     :return: the probability vectors of each topics the entry belongs to
     """
 #     X, y = df[df.columns[:-1]], df[df.columns[-1]]
-    lda = LatentDirichletAllocation(n_components=num_topics,
+#     lda = LatentDirichletAllocation(n_components=num_topics,
+    lda = LatentDirichletAllocation(n_topics=num_topics,
                                     max_iter=5,
                                     learning_method='online',
                                     learning_offset=50.,
