@@ -11,7 +11,8 @@ from .forms import UploadFileForm
 from sklearn.linear_model import LinearRegression
 
 import csv
-import matplotlib.pyplot as plt, mpld3
+# from coreschema.schemas import Null
+# import matplotlib.pyplot as plt, mpld3
 
 
 def plot(f):
@@ -23,13 +24,13 @@ def plot(f):
     algorithm.fit(x,y)
 
 
-    m = algorithm.coef_
-    b = algorithm.intercept_
-    fig = plt.figure()
-    plt.scatter(x, y)
-    plt.plot([min(x)[0],max(x)[0]], [m*min(x)[0] + b, m*max(x)[0] + b])
-    fig_html = mpld3.fig_to_html(fig) # When we have local mpld3 libraries we will need to tweak this
-    return fig_html
+#     m = algorithm.coef_
+#     b = algorithm.intercept_
+#     fig = plt.figure()
+#     plt.scatter(x, y)
+#     plt.plot([min(x)[0],max(x)[0]], [m*min(x)[0] + b, m*max(x)[0] + b])
+#     fig_html = mpld3.fig_to_html(fig) # When we have local mpld3 libraries we will need to tweak this
+    return " "
 
 def index(request):
     return HttpResponse("Hello, world. You're at the cohort index.")
