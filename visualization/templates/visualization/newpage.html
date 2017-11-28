@@ -50,20 +50,22 @@ for (var i = 0; i < arrayLength; i++) {
         $(".submit_checked").click(function(){
             $("table tbody").find('input[name="record"]').each(function(){
             	if($(this).is(":checked")){
-					checked_node.push($(this).closest("tr").find('td:eq(1)').text().concat("*********").concat($(this).closest("tr").find('td:eq(2)').text()));
+					checked_node.push($(this).closest("tr").find('td:eq(1)').text().concat("*********").concat($(this).closest("tr").find('td:eq(2)').text().replace(',',' ')));
 					console.log(checked_node);
-					localStorage.setItem('checked_node', checked_node);
+		            localStorage.setItem('checked_node', checked_node);
                 } else{
 					var index = checked_node.indexOf($(this));
 					if (index > -1) {
                       checked_node.splice(index, 1);
+                      console.log(checked_node);
                       localStorage.setItem('checked_node', checked_node);
                      }
 					}
             });
+            
         });
     });  
-
+  
 
 </script>
 
@@ -82,6 +84,6 @@ for (var i = 0; i < arrayLength; i++) {
         </tbody>
     </table>
     <form action="{% url 'compare' %}">
-    	<button type="submit" class="btn btn-primary center-block">Compare</button>
+    	<button type="submit" class="submit_checked btn btn-primary center-block">Compare</button>
     </form>
 {% include "footer.html"%}

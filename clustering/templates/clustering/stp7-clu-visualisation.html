@@ -140,17 +140,17 @@ d3.csv("{% static 'data/outcome_visual.csv'%}", function(error, data) {
                .style("opacity", 0);
       });
 
-d3.selectAll(".dot").on("click", function(d){
-d3.select(this)
-.attr("r", 5.5)
-.style("fill","steelblue")
-.style("stroke","steelblue");
-node_list.push(d.id.concat("*********").concat(d.diags).replace(',',' '));
-
-node_list = uniqBy(node_list,JSON.stringify)
-localStorage.setItem('node_list', node_list);
-console.log(node_list);
-})
+	d3.selectAll(".dot").on("click", function(d){
+		d3.select(this)
+			.attr("r", 5.5)
+			.style("fill","steelblue")
+			.style("stroke","steelblue");
+		node_list.push(d.id.concat("*********").concat(d.diags).replace(',',' '));
+	
+		node_list = uniqBy(node_list,JSON.stringify)
+		localStorage.setItem('node_list', node_list);
+		console.log(node_list);
+	})
 
   // draw legend
   var legend = svg.selectAll(".legend")
